@@ -24,9 +24,10 @@ export function Hero() {
         className="pointer-events-none absolute bottom-0 right-0 size-[28rem] rounded-full bg-accent/10 blur-[120px]"
       />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1.15fr_0.85fr]">
-        
-        {/* Left side */}
+      {/* Hero content */}
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+
+        {/* LEFT SIDE */}
         <div className="relative z-10 max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/50 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <span className="size-1.5 rounded-full bg-accent" />
@@ -46,7 +47,10 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button size="lg" render={<a href="#projects" />}>
+            <Button
+              size="lg"
+              render={<a href="#projects" />}
+            >
               View My Work
               <ArrowRight className="size-4" />
             </Button>
@@ -83,28 +87,32 @@ export function Hero() {
           </div>
         </div>
 
-        {/* AI Robot */}
+        {/* RIGHT SIDE - AI ROBOT */}
         <div
           aria-hidden="true"
           className="relative hidden items-center justify-center lg:flex"
         >
-          {/* Glow behind robot */}
-          <div className="absolute size-[26rem] rounded-full bg-primary/15 blur-[100px]" />
+          {/* Purple/cyan glow behind robot */}
+          <div className="pointer-events-none absolute size-[28rem] rounded-full bg-primary/15 blur-[100px]" />
 
+          {/* Floating robot */}
           <div
             className="relative"
-            style={{ animation: 'float-slow 8s ease-in-out infinite' }}
+            style={{
+              animation: 'float-slow 8s ease-in-out infinite',
+            }}
           >
             <Image
-              src="/minahil-ai-robot.png"
+              src="/robome.png"
               alt=""
-              width={600}
-              height={600}
+              width={700}
+              height={700}
               priority
-              className="relative z-10 h-auto w-full max-w-[520px] object-contain drop-shadow-[0_0_35px_rgba(139,92,246,0.25)]"
+              className="relative z-10 h-auto w-full max-w-[560px] object-contain drop-shadow-[0_0_35px_rgba(139,92,246,0.30)]"
             />
           </div>
         </div>
+
       </div>
     </section>
   )
