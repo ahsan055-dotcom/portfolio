@@ -7,7 +7,7 @@ export const siteConfig = {
   // TODO: replace with your real links
   github: 'https://github.com/', // e.g. https://github.com/your-username
   linkedin: 'https://www.linkedin.com/', // e.g. https://www.linkedin.com/in/your-handle
-  email: 'you@example.com', // e.g. minahil@example.com
+  email: 'minahil.ahsan18@gmail.com',
 }
 
 export const navLinks = [
