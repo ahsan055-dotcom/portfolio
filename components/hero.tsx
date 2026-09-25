@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { Button } from '@/components/ui/button'
@@ -17,27 +18,16 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 left-1/2 size-[42rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]"
       />
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute bottom-0 right-0 size-[28rem] rounded-full bg-accent/10 blur-[120px]"
       />
 
-      {/* Floating orbiting core, referencing Astra Rush */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[8%] top-1/3 hidden lg:block"
-      >
-        <div
-          className="relative flex size-40 items-center justify-center rounded-full border border-primary/30"
-          style={{ animation: 'float-slow 8s ease-in-out infinite' }}
-        >
-          <div className="size-16 rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_0_60px_-5px] shadow-primary/60" />
-          <span className="absolute -right-1 top-1/2 size-3 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_20px] shadow-accent" />
-        </div>
-      </div>
-
-      <div className="relative mx-auto w-full max-w-6xl px-6">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1.15fr_0.85fr]">
+        
+        {/* Left side */}
+        <div className="relative z-10 max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/50 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <span className="size-1.5 rounded-full bg-accent" />
             University of Minnesota Twin Cities
@@ -60,22 +50,59 @@ export function Hero() {
               View My Work
               <ArrowRight className="size-4" />
             </Button>
+
             <Button
               size="lg"
               variant="secondary"
-              render={<a href={siteConfig.github} target="_blank" rel="noopener noreferrer" />}
+              render={
+                <a
+                  href={siteConfig.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
             >
               <GithubIcon className="size-4" />
               GitHub
             </Button>
+
             <Button
               size="lg"
               variant="outline"
-              render={<a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" />}
+              render={
+                <a
+                  href={siteConfig.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
             >
               <LinkedinIcon className="size-4" />
               LinkedIn
             </Button>
+          </div>
+        </div>
+
+        {/* AI Robot */}
+        <div
+          aria-hidden="true"
+          className="relative hidden items-center justify-center lg:flex"
+        >
+          {/* Glow behind robot */}
+          <div className="absolute size-[26rem] rounded-full bg-primary/15 blur-[100px]" />
+
+          <div
+            className="relative"
+            style={{ animation: 'float-slow 8s ease-in-out infinite' }}
+          >
+            <Image
+              src="/minahil-ai-robot.png"
+              alt=""
+              width={600}
+              height={600}
+              priority
+              className="relative z-10 h-auto w-full max-w-[520px] object-contain drop-shadow-[0_0_35px_rgba(139,92,246,0.25)]"
+            />
           </div>
         </div>
       </div>
