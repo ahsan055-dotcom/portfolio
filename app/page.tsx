@@ -4,6 +4,7 @@ import { About } from '@/components/about'
 import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { Experience } from '@/components/experience'
+import { Research } from '@/components/research'
 import { Exploring } from '@/components/exploring'
 import { Contact } from '@/components/contact'
 
@@ -17,6 +18,7 @@ export default function Page() {
         <Projects />
         <Skills />
         <Experience />
+        <Research />
         <Exploring />
         <Contact />
       </main>
